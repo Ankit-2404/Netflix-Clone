@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Netflix India - Watch TV Shows Online, Watch Movies Online</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            netflix: {
+              red: '#E50914',
+              black: '#141414',
+              gray: '#808080',
+              darkgray: '#2F2F2F',
+              white: '#FFFFFF'
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body id="top">
+  <!-- Theme Switcher Inputs -->
+  <input type="radio" name="theme" id="theme-red" checked hidden>
+  <input type="radio" name="theme" id="theme-blue" hidden>
+  <input type="radio" name="theme" id="theme-purple" hidden>
+
+
+  <div class="main">
+    <nav class="navbar-sticky">
+      <div class="nav-left">
+        <a href="#top" class="logo-link"><img width="115" src="logo.netflix.svg" alt="Netflix Logo"></a>
+        <div class="nav-links-main">
+          <a href="#" class="nav-item active">Home</a>
+          <a href="#" class="nav-item">TV Shows</a>
+          <a href="#" class="nav-item">Movies</a>
+          <div class="dropdown relative">
+            <span class="dropbtn nav-item cursor-pointer">Genres ▼</span>
+            <div class="dropdown-content absolute hidden pt-2">
+              <div
+                class="bg-netflix-black border border-white/10 rounded p-2 min-w-[150px] backdrop-blur-md shadow-2xl">
+                <a href="#" class="block px-4 py-2 text-sm hover:bg-white/10 text-white">Action</a>
+                <a href="#" class="block px-4 py-2 text-sm hover:bg-white/10 text-white">Comedy</a>
+                <a href="#" class="block px-4 py-2 text-sm hover:bg-white/10 text-white">Horror</a>
+                <a href="#" class="block px-4 py-2 text-sm hover:bg-white/10 text-white">Sci-Fi</a>
+              </div>
+            </div>
+          </div>
+          <a href="#" class="nav-item">New & Popular</a>
+        </div>
+      </div>
+
+      <div class="nav-right">
+        <div class="nav-icons">
+          <button class="icon-btn search-trigger" title="Search">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </button>
+          <button class="icon-btn notification-btn" title="Notifications">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+              <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+            </svg>
+          </button>
+          <div class="profile-avatar" title="Profile">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png" alt="Profile Avatar">
+          </div>
+        </div>
+        <div class="select-container">
+          <select class="nav-lang-select glass-select">
+            <option value="en-IN" selected>English</option>
+            <option value="hi-IN">हिन्दी</option>
+          </select>
+        </div>
+        <button id="sign" class="premium-sign-in">Sign In</button>
+      </div>
+    </nav>
+
+    <div class="box">
+    </div>
+    <div class="hero">
+      <span>Unlimited movies,</span>
+      <span>TV shows and more</span>
+      <span>Starts at ₹149. Cancel at any time.</span>
+      <span>Ready to watch? Enter your email to create or restart your membership.</span>
+      <div class="hero-buttons">
+        <input type="email" placeholder="Email address">
+        <button class="start">Get Started &gt;</button>
+      </div>
+    </div>
+    <div class="separation">
+    </div>
+
+  </div>
+
+  <section class="trending-now">
+    <h2 class="trending-title">Trending Now</h2>
+    <div class="movie-container">
+      <div class="movie-card">
+        <a href="#modal-1" style="display: contents;">
+          <span class="ranking-number">1</span>
+          <div class="card-inner">
+            <img src="https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?q=80&w=400" alt="Movie 1">
+            <div class="progress-bar">
+              <div class="progress" style="width: 70%;"></div>
+            </div>
+            <div class="card-info">
+              <h3 class="card-title">Cyber Strike</h3>
+              <div class="card-meta">
+                <span class="rating">9.8</span>
+                <span class="year">2024</span>
+                <span class="quality">4K</span>
+              </div>
+              <p class="card-desc">In a dystopian future, a lone hacker must infiltrate the ultimate AI core.</p>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="movie-card">
+        <span class="ranking-number">2</span>
+        <div class="card-inner">
+          <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=400" alt="Movie 2">
+          <div class="progress-bar">
+            <div class="progress" style="width: 40%;"></div>
+          </div>
+          <div class="card-info">
+            <h3 class="card-title">Neon Nights</h3>
+            <div class="card-meta">
+              <span class="rating">9.5</span>
+              <span class="year">2023</span>
+              <span class="quality">HD</span>
+            </div>
+            <p class="card-desc">A detective follows a trail of neon lights to solve a forgotten mystery.</p>
+          </div>
+        </div>
+      </div>
+      <div class="movie-card">
+        <span class="ranking-number">3</span>
+        <div class="card-inner">
+          <img
+            src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/romance-movie-poster-design-template-a03a68814253fa73d721ea2015e16215.webp?ts=1699485319"
+            alt="Movie 3">
+          <div class="progress-bar">
+            <div class="progress" style="width: 90%;"></div>
+          </div>
+          <div class="card-info">
+            <h3 class="card-title">Love & Loss</h3>
+            <div class="card-meta">
+              <span class="rating">8.9</span>
+              <span class="year">2024</span>
+              <span class="quality">4K</span>
+            </div>
+            <p class="card-desc">A bittersweet journey through memories of a love that defined a lifetime.</p>
+          </div>
+        </div>
+      </div>
+      <div class="movie-card">
+        <span class="ranking-number">4</span>
+        <div class="card-inner">
+          <img src="https://images.unsplash.com/photo-1509248961158-e54f6934749c?q=80&w=400" alt="Movie 4">
+          <div class="card-info">
+            <h3 class="card-title">Shadow Realm</h3>
+            <div class="card-meta">
+              <span class="rating">9.2</span>
+              <span class="year">2023</span>
+              <span class="quality">4K</span>
+            </div>
+            <p class="card-desc">Ancient secrets emerge from the shadows of a lost civilization.</p>
+          </div>
+        </div>
+      </div>
+      <div class="movie-card">
+        <span class="ranking-number">5</span>
+        <div class="card-inner">
+          <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?q=80&w=400" alt="Movie 5">
+          <div class="card-info">
+            <h3 class="card-title">Beyond Stars</h3>
+            <div class="card-meta">
+              <span class="rating">9.7</span>
+              <span class="year">2024</span>
+              <span class="quality">4K</span>
+            </div>
+            <p class="card-desc">A crew of explorers ventures to the farthest reaches of the galaxy.</p>
+          </div>
+        </div>
+      </div>
+      <div class="movie-card">
+        <span class="ranking-number">6</span>
+        <div class="card-inner">
+          <img src="https://images.unsplash.com/photo-1440404653325-ab127d49abc1?q=80&w=400" alt="Movie 6">
+          <div class="card-info">
+            <h3 class="card-title">Cold Case</h3>
+            <div class="card-meta">
+              <span class="rating">8.7</span>
+              <span class="year">2022</span>
+              <span class="quality">HD</span>
+            </div>
+            <p class="card-desc">Uncovering truth in a frozen landscape where silence is deadly.</p>
+          </div>
+        </div>
+      </div>
+      <div class="movie-card">
+        <span class="ranking-number">7</span>
+        <div class="card-inner">
+          <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=400" alt="Movie 7">
+          <div class="card-info">
+            <h3 class="card-title">Silent Echo</h3>
+            <div class="card-meta">
+              <span class="rating">9.1</span>
+              <span class="year">2023</span>
+              <span class="quality">4K</span>
+            </div>
+            <p class="card-desc">Voices from the past echo through a modern conspiracy.</p>
+          </div>
+        </div>
+      </div>
+      <div class="movie-card">
+        <span class="ranking-number">8</span>
+        <div class="card-inner">
+          <img
+            src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/movie-poster-template-design-71650f9b1c11091f5bcd637d4a18d9a7.webp?ts=1698340540"
+            alt="Movie 8">
+          <div class="card-info">
+            <h3 class="card-title">The Arrival</h3>
+            <div class="card-meta">
+              <span class="rating">9.9</span>
+              <span class="year">2024</span>
+              <span class="quality">4K</span>
+            </div>
+            <p class="card-desc">Humanity's first contact with an intelligence far beyond our own.</p>
+          </div>
+        </div>
+      </div>
+      <div class="movie-card">
+        <span class="ranking-number">9</span>
+        <div class="card-inner">
+          <img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?q=80&w=400" alt="Movie 9">
+          <div class="card-info">
+            <h3 class="card-title">Project X</h3>
+            <div class="card-meta">
+              <span class="rating">8.5</span>
+              <span class="year">2023</span>
+              <span class="quality">HD</span>
+            </div>
+            <p class="card-desc">An experimental project that spiraled wildly out of control.</p>
+          </div>
+        </div>
+      </div>
+      <div class="movie-card">
+        <span class="ranking-number">10</span>
+        <div class="card-inner">
+          <img src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?q=80&w=400" alt="Movie 10">
+          <div class="card-info">
+            <h3 class="card-title">The Void</h3>
+            <div class="card-meta">
+              <span class="rating">9.4</span>
+              <span class="year">2024</span>
+              <span class="quality">4K</span>
+            </div>
+            <p class="card-desc">Into the deep unknown where physics no longer applies.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="separation">
+  </div>
+  <section class="first">
+    <div class="tv-text">
+      <h1>Enjoy on your TV</h1>
+      <h2>
+        Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray players and more.
+      </h2>
+    </div>
+    <div class="imgsec">
+      <div class="device-wrapper">
+        <img src="tv.jpeg" alt="">
+        <video src="https://videos.pond5.com/scrolling-netflix-offering-tv-screen-footage-116649893_main_xxl.mp4" muted
+          autoplay loop></video>
+      </div>
+    </div>
+  </section>
+  <div class="separation">
+  </div>
+
+  <section class="second">
+    <div class="mobimg">
+      <img src="mobile.webp" alt="">
+    </div>
+    <div class="mobtext">
+      <h1>Download your shows to watch offline.</h1>
+      <h2>Save your favourites easily and always have something to watch.</h2>
+    </div>
+  </section>
+  <div class="separation">
+  </div>
+
+  <section class="third">
+
+    <div class="macktxt">
+      <h1>Watch everywhere.</h1>
+      <h2>
+        Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV without paying more.
+      </h2>
+    </div>
+    <div class="imgthirdsec">
+      <div class="device-wrapper">
+        <img src="mack.webp" alt="">
+        <video
+          src="https://www.shutterstock.com/shutterstock/videos/3810153743/preview/stock-footage-sofia-bulgaria-cozy-movie-night-watching-netflix-on-big-screen-in-comfortable-warm.webm"
+          muted autoplay></video>
+      </div>
+    </div>
+  </section>
+  <div class="separation">
+  </div>
+  <section class="fourth">
+    <div class="mobimg">
+      <img src="child.jpeg" alt="">
+    </div>
+    <div class="mobtext">
+      <h1>Create profiles for kids</h1>
+      <h2>Send children on adventures with their favourite characters in a space made just for them-- free with your
+        membership.</h2>
+    </div>
+  </section>
+  <div class="separation">
+  </div>
+
+  <section class="faq">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faqbox">
+      <div class="faq-item">
+        <span class="faq-question">
+          What is Netflix
+          <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+            <path d="M12 4V20M20 12H4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round"></path>
+          </svg>
+        </span>
+        <div class="faq-answer">
+          Netflix is a streaming service that offers a wide variety of award-winning TV shows, movies, anime,
+          documentaries and more – on thousands of internet-connected devices.
+
+          You can watch as much as you want, whenever you want, without a single ad – all for one low monthly price.
+          There's always something new to discover, and new TV shows and movies are added every week!
+        </div>
+      </div>
+      <div class="faq-item">
+        <span class="faq-question">
+          How much Netflix cost?
+          <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+            <path d="M12 4V20M20 12H4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round"></path>
+          </svg>
+        </span>
+        <div class="faq-answer">
+          Watch Netflix on your smartphone, tablet, Smart TV, laptop, or streaming device, all for one fixed monthly
+          fee. Plans range from ₹149 to ₹649 a month. No extra costs, no contracts.
+        </div>
+      </div>
+      <div class="faq-item">
+        <span class="faq-question">
+          Where can I watch?
+          <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+            <path d="M12 4V20M20 12H4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round"></path>
+          </svg>
+        </span>
+        <div class="faq-answer">
+          Watch anywhere, anytime. Sign in with your Netflix account to watch instantly on the web at netflix.com from
+          your personal computer or on any internet-connected device that offers the Netflix app, including smart TVs,
+          smartphones, tablets, streaming media players and game consoles.
+
+          You can also download your favourite shows with the iOS or Android app. Use downloads to watch while you're on
+          the go and without an internet connection. Take Netflix with you anywhere.
+        </div>
+      </div>
+      <div class="faq-item">
+        <span class="faq-question">
+          How do I cancel?
+          <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+            <path d="M12 4V20M20 12H4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round"></path>
+          </svg>
+        </span>
+        <div class="faq-answer">
+          Netflix is flexible. There are no annoying contracts and no commitments. You can easily cancel your account
+          online in two clicks. There are no cancellation fees – start or stop your account anytime.
+        </div>
+      </div>
+      <div class="faq-item">
+        <span class="faq-question">
+          What can I watch on Netflix?
+          <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+            <path d="M12 4V20M20 12H4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round"></path>
+          </svg>
+        </span>
+        <div class="faq-answer">
+          Netflix has an extensive library of feature films, documentaries, TV shows, anime, award-winning Netflix
+          originals, and more. Watch as much as you want, anytime you want.
+        </div>
+      </div>
+      <div class="faq-item">
+        <span class="faq-question">
+          Is Netflix good for kids?
+          <svg class="faq-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+            <path d="M12 4V20M20 12H4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round"></path>
+          </svg>
+        </span>
+        <div class="faq-answer">
+          The Netflix Kids experience is included in your membership to give parents control while kids enjoy
+          family-friendly TV shows and films in their own space.
+
+          Kids profiles come with PIN-protected parental controls that let you restrict the maturity rating of content
+          kids can watch and block specific titles you don’t want kids to see.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="hero2">
+    <span>Ready to watch? Enter your email to create or restart your membership.</span>
+    <div class="hero-buttons">
+      <input type="email" placeholder="Email address">
+      <button class="start">Get Started &gt;</button>
+    </div>
+    <div class="separation">
+    </div>
+    <span class="inline text-netflix-gray hover:text-netflix-white text-sm transition-colors">Contact Us at <a
+        href="https://github.com/Ankit-2404" target="_blank">GitHub</a></span>
+  </div>
+  </div>
+  <footer>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+      <!-- Column 1 -->
+      <div class="space-y-3">
+        <a href="#" class="block text-netflix-gray hover:text-netflix-white text-sm transition-colors">FAQ</a>
+        <a href="#" class="block text-netflix-gray hover:text-netflix-white text-sm transition-colors">Investor
+          Relations</a>
+        <a href="#" class="block text-netflix-gray hover:text-netflix-white text-sm transition-colors">Privacy</a>
+        <a href="#" class="block text-netflix-gray hover:text-netflix-white text-sm transition-colors">Speed Test</a>
+      </div>
+
+      <!-- Column 2 -->
+      <div class="space-y-3">
+        <a href="#" class="block text-netflix-gray hover:text-netflix-white text-sm transition-colors">Help Center</a>
+        <a href="#" class="block text-netflix-gray hover:text-netflix-white text-sm transition-colors">Jobs</a>
+        <a href="#" class="block text-netflix-gray hover:text-netflix-white text-sm transition-colors">Cookie
+          Preferences</a>
+        <a href="#" class="block text-netflix-gray hover:text-netflix-white text-sm transition-colors">Legal Notices</a>
+      </div>
+
+      <!-- Column 3 -->
+      <div class="space-y-3">
+        <a href="#" class="block text-netflix-gray hover:text-netflix-white text-sm transition-colors">Account</a>
+        <a href="#" class="block text-netflix-gray hover:text-netflix-white text-sm transition-colors">Ways to Watch</a>
+        <a href="#" class="block text-netflix-gray hover:text-netflix-white text-sm transition-colors">Corporate
+          Information</a>
+        <a href="#" class="block text-netflix-gray hover:text-netflix-white text-sm transition-colors">Only on
+          Netflix</a>
+      </div>
+
+      <!-- Column 4 -->
+      <div class="space-y-3">
+        <a href="#" class="block text-netflix-gray hover:text-netflix-white text-sm transition-colors">Media Center</a>
+        <a href="#" class="block text-netflix-gray hover:text-netflix-white text-sm transition-colors">Terms of Use</a>
+        <a href="#" class="block text-netflix-gray hover:text-netflix-white text-sm transition-colors">Contact Us</a>
+      </div>
+    </div>
+    <!-- Language Selector -->
+    <div class="mb-8">
+      <div class="relative inline-block">
+        <select
+          class="bg-netflix-darkgray text-netflix-gray border border-netflix-gray rounded-sm px-4 py-2 pr-8 appearance-none focus:outline-none focus:border-netflix-white text-sm">
+          <option value="en">English</option>
+          <option value="es">हिन्दी</option>
+
+        </select>
+        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-netflix-gray">
+          <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+            <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <!-- Theme Switcher UI -->
+    <div class="theme-switcher mb-8">
+      <span class="text-netflix-gray text-sm mr-4">Select Theme:</span>
+      <div class="theme-options inline-flex gap-4">
+        <label for="theme-red" class="theme-label red" title="Netflix Red"></label>
+        <label for="theme-blue" class="theme-label blue" title="Cyber Blue"></label>
+        <label for="theme-purple" class="theme-label purple" title="Premium Purple"></label>
+      </div>
+    </div>
+
+    <!-- Country and Copyright -->
+    <div class="mt-8">
+      <p class="text-netflix-gray text-sm">Netflix United States</p>
+      <p class="text-netflix-gray text-sm mt-2">© 2024 Netflix, Inc.</p>
+    </div>
+    </div>
+  </footer>
+
+  <a href="#top" class="back-to-top" title="Back to Top">
+    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2.5" fill="none"
+      stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </a>
+
+  <!-- CSS-Only Modals -->
+  <div id="modal-1" class="modal">
+    <div class="modal-content">
+      <a href="#" class="close">&times;</a>
+      <div class="modal-body">
+        <img src="https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?q=80&w=1200" alt="Main Poster">
+        <div class="modal-details">
+          <h2>Cyber Strike</h2>
+          <p class="modal-meta">2024 | 9.8 Rating | 4K Ultra HD</p>
+          <p class="modal-desc">In a dystopian future, a lone hacker must infiltrate the ultimate AI core. Discover a
+            world where lines between human and machine are blurred.</p>
+          <div class="modal-actions">
+            <button class="start" style="width: auto;">Play Now</button>
+            <button id="add-list"
+              style="background: rgba(255,255,255,0.1); color: white; border: none; padding: 10px 25px; border-radius: 4px; cursor: pointer; font-weight: 700;">+
+              My List</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Toggle FAQ answers
+    document.querySelectorAll('.faq-question').forEach(q => {
+      q.addEventListener('click', function () {
+        const item = this.parentElement;
+        item.classList.toggle('active');
+      });
+    });
+  </script>
+</body>
+
+</html>
